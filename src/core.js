@@ -28,11 +28,21 @@ export function initialize(newTrackerId) {
   /* eslint-enable */
 }
 
-export function pageview() {
+export function getTracker() {
+  return tracker;
+}
+
+export function trackPageview() {
   tracker.push({ notify: 'event', name: 'page_view', id: trackerId });
+}
+
+export function trackEvent(eventAction = '') {
+  tracker.push({ notify: 'event', name: eventAction, id: trackerId });
 }
 
 export default {
   initialize,
-  pageview,
+  getTracker,
+  trackPageview,
+  trackEvent,
 };

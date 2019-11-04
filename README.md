@@ -16,10 +16,27 @@ npm install react-tracking-taboola --save
 
 ### With npm
 
-Initializing TaboolaTracking and tracking pageviews:
+Before tracking any page views or events the tracker needs to be imported and initialized with the custom tracking id:
 
 ```js
-import TaboolaTracking from 'react-tracking-taboola';
-TaboolaTracking.initialize('TRACKING_ID');
-TaboolaTracking.pageview();
+import OutbrainTracking from 'react-tracking-taboola';
+OutbrainTracking.initialize('TRACKING_ID');
+```
+
+After initializing page views can be tracked like this:
+
+```js
+OutbrainTracking.trackPageview();
+```
+
+There is also the option to track custom events with event action:
+
+```js
+OutbrainTracking.trackEvent(eventAction);
+```
+
+There is also a method to expose the raw tracking object from the window:
+
+```js
+OutbrainTracking.getTracker();
 ```
