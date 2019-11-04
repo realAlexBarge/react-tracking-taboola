@@ -6,13 +6,12 @@
  */
 
 let trackerId;
+const tracker = window._tfa || [];
 
-export function initialize(newTrackerId, options) {
+export function initialize(newTrackerId) {
   trackerId = newTrackerId;
 
-  window._tfa = window._tfa || [];
-  window._tfa.push({ notify: 'event', name: 'page_view', id: trackerId });
-
+  /* eslint-disable */
   !(function(t, f, a, x) {
     if (!document.getElementById(x)) {
       t.async = 1;
@@ -26,10 +25,11 @@ export function initialize(newTrackerId, options) {
     `//cdn.taboola.com/libtrc/unip/${trackerId}/tfa.js`,
     'tb_tfa_script',
   );
+  /* eslint-enable */
 }
 
 export function pageview() {
-  window._tfa.push({ notify: 'event', name: 'page_view', id: trackerId });
+  tracker.push({ notify: 'event', name: 'page_view', id: trackerId });
 }
 
 export default {
