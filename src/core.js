@@ -5,6 +5,19 @@
  * @author Alexander Barge <alexander.barge@gmail.com>
  */
 
+export function getTracker() {
+  return window._tfa || [];
+}
+
+export function trackPageview() {
+  getTracker().push({ notify: 'event', name: 'view_content' });
+  getTracker().push({ notify: 'event', name: 'page_view' });
+}
+
+export function trackEvent(eventAction = '') {
+  getTracker().push({ notify: 'event', name: eventAction });
+}
+
 export function initialize(newTrackerId) {
   /* eslint-disable */
   !(function(t, f, a, x) {
@@ -21,19 +34,7 @@ export function initialize(newTrackerId) {
     'tb_tfa_script',
   );
   /* eslint-enable */
-}
-
-export function getTracker() {
-  return window._tfa || [];
-}
-
-export function trackPageview() {
-  getTracker().push({ notify: 'event', name: 'view_content' });
-  getTracker().push({ notify: 'event', name: 'page_view' });
-}
-
-export function trackEvent(eventAction = '') {
-  getTracker().push({ notify: 'event', name: eventAction });
+  trackPageview();
 }
 
 export default {
