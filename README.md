@@ -43,4 +43,4 @@ TaboolaTracking.getTracker();
 
 This modules takes care of injecting the provider specific tracking script into the document and provides a tiny wrapper for the tracking api. It also exposes the tracker object api for direct access.
 
-Documentation for the raw tracker api can be found [here](https://help.taboola.com/hc/en-us/articles/360003469854-Taboola-Pixel-Overview).
+Documentation for the raw tracker api can be found [here](https://help.taboola.com/hc/en-us/articles/360003469854-Taboola-Pixel-Overview) and [here](https://help.taboola.com/hc/en-us/articles/360007856794-Developer-Notes).
