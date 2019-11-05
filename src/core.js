@@ -5,12 +5,7 @@
  * @author Alexander Barge <alexander.barge@gmail.com>
  */
 
-let trackerId;
-const tracker = window._tfa || [];
-
 export function initialize(newTrackerId) {
-  trackerId = newTrackerId;
-
   /* eslint-disable */
   !(function(t, f, a, x) {
     if (!document.getElementById(x)) {
@@ -22,22 +17,23 @@ export function initialize(newTrackerId) {
   })(
     document.createElement('script'),
     document.getElementsByTagName('script')[0],
-    `//cdn.taboola.com/libtrc/unip/${trackerId}/tfa.js`,
+    `//cdn.taboola.com/libtrc/unip/${newTrackerId}/tfa.js`,
     'tb_tfa_script',
   );
   /* eslint-enable */
 }
 
 export function getTracker() {
-  return tracker;
+  return window._tfa || [];
 }
 
 export function trackPageview() {
-  tracker.push({ notify: 'event', name: 'page_view', id: trackerId });
+  getTracker().push({ notify: 'event', name: 'view_content' });
+  getTracker().push({ notify: 'event', name: 'page_view' });
 }
 
 export function trackEvent(eventAction = '') {
-  tracker.push({ notify: 'event', name: eventAction, id: trackerId });
+  getTracker().push({ notify: 'event', name: eventAction });
 }
 
 export default {
