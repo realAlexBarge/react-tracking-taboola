@@ -14,8 +14,6 @@ npm install react-tracking-taboola --save
 
 # Usage
 
-### With npm
-
 Before tracking any page views or events the tracker needs to be imported and initialized with the custom tracking id:
 
 ```js
@@ -35,8 +33,14 @@ There is also the option to track custom events with event action:
 TaboolaTracking.trackEvent(eventAction);
 ```
 
-There is also a method to expose the raw \_tfa tracking object from the window:
+There is also a method to expose the raw \_tfa tracking object api from the window:
 
 ```js
 TaboolaTracking.getTracker();
 ```
+
+# How this works
+
+This modules takes care of injecting the provider specific tracking script into the document and provides a tiny wrapper for the tracking api. It also exposes the tracker object api for direct access.
+
+Documentation for the raw tracker api can be found [here](https://help.taboola.com/hc/en-us/articles/360003469854-Taboola-Pixel-Overview).
