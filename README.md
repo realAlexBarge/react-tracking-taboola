@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/realalexbarge/react-tracking-taboola.svg?branch=master)](https://travis-ci.org/realalexbarge/react-tracking-taboola) [![dependencies Status](https://david-dm.org/realalexbarge/react-tracking-taboola/status.svg)](https://david-dm.org/realalexbarge/react-tracking-taboola) [![devDependencies Status](https://david-dm.org/realalexbarge/react-tracking-taboola/dev-status.svg)](https://david-dm.org/realalexbarge/react-tracking-taboola?type=dev) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Un-official module to easily add Taboola pageview tracking to react apps.
+Un-official module to easily add Taboola pageview tracking to react apps. It functions as a tiny wrapper for the native script tag and window api. After initialization the Taboola script is injected into the document.
 
 # Installation
 
