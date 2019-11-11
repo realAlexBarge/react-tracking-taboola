@@ -1,6 +1,6 @@
 {
   "name": "react-tracking-taboola",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "React Taboola Tracking Module",
   "main": "./lib/index.js",
   "scripts": {
