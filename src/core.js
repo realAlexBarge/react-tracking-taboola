@@ -45,7 +45,6 @@ export function initialize(newTrackerId) {
       'tb_tfa_script',
     );
     /* eslint-enable */
-    trackPageview();
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn(e);
