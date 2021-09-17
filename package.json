@@ -3,6 +3,7 @@
   "version": "0.3.5",
   "description": "React Taboola Tracking Module",
   "main": "./lib/index.js",
+  "types": "./ts/index.d.ts",
   "scripts": {
     "clean": "rimraf lib",
     "test": "npm run lint",

@@ -19,9 +19,9 @@ export function trackPageview() {
   }
 }
 
-export function trackEvent(eventAction = '') {
+export function trackEvent(eventAction = '', content = {}) {
   try {
-    getTracker().push({ notify: 'event', name: eventAction });
+    getTracker().push({ notify: 'event', name: eventAction, ...content });
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn(e);

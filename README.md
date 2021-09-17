@@ -33,6 +33,18 @@ There is also the option to track custom events with event action:
 TaboolaTracking.trackEvent(eventAction);
 ```
 
+There is also the option to track custom events with event action and content:
+
+```js
+TaboolaTracking.trackEvent('make_purchase', {
+  revenue: '', 
+  currency: '', 
+  orderid: '', 
+  quantity: ''
+});
+  // Exemple for purchase
+```
+
 There is also a method to expose the raw \_tfa tracking object api from the window:
 
 ```js
